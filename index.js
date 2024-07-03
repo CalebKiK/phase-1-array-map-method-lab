@@ -11,35 +11,18 @@ const tutorials = [
   'what is JSONP?'
 ];
 
-// const titleCased = () => {
-//   return tutorials.map((tutorialName, index) => {
-//     const eachWord = tutorialName.split ('');
-      
-//     const titleCasedWords = eachWord.map((word, wordIndex) => {
-//       if (index === tutorials.length -1 && wordIndex === eachWord.length -1){
-//         return word.toUpperCase();
-//       } else {
-//           return eachWord.charAt(0).toUpperCase() + eachWord.slice(1).toLowerCase();
-//       } 
-//       });
-
-//     return titleCasedWords.join (''); 
-//   })};
-
-// console.log(titleCased());
-
-
 const titleCased = () => {
-  return tutorials.map((tutorialName, index) => {
-    const eachWord = tutorialName.split ('');
+  return tutorials.map((tutorialName) => {
+    const words = tutorialName.split(' ');
       
-    const titleCasedWords = eachWord.map(eachWord.charAt(0).toUpperCase() + word.slice(1));
+    const titleCasedWords = words.map((word) => {
+      
+      return word.charAt(0).toUpperCase() + word.slice(1);
+      
+      });
 
-    const titleCaseSentence = titleCasedWords.join ('');
-
-    return titleCaseSentence.slice(0,-1).toUpperCase() + titleCaseSentence.slice(-1);
-
-    });  
-  }
+    return titleCasedWords.join(' '); 
+  });
+};
 
 console.log(titleCased());
